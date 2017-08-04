@@ -1,2 +1,42 @@
 <h2>Edit Product</h2>
-<%= render "form" %>
+<%= simple_form_for [:admin,@product] do |f| %>
+<div class="group">
+  <%= f.input :title,label:"名称" %>
+</div>
+
+<div class="group">
+  <%= f.input :description,label:"描述" %>
+</div>
+
+<div class="group">
+  <%= f.input :quantity,label:"数量" %>
+</div>
+
+<div class="group">
+  <%= f.input :price,label:"价格" %>
+</div>
+
+ <% if !@product.image.file.nil? %>
+ <span>目前商品图</span>
+ <br>
+ <%= image_tag(@product.image.thumb.url) %>
+ <% else %>
+ <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+ <% end %>
+
+ <% if @product.avatars.present? %>
+ <span>目前展示图</span>
+ <% @product.avatars.each do |a| %>
+ 展示图: <%= image_tag(a.thumb.url) %>
+ <% end %>
+ <% end %>
+<div class="group">
+  <%= f.input :image, as: :file %>
+</div>
+
+<div class="group">
+  <%= f.file_field :avatars ,multiple: 'true' %>
+</div>
+
+<%= f.submit "确定",data: {disable_with: "提交中..."},class:"btn btn-sm btn-primary" %>
+<% end %>
