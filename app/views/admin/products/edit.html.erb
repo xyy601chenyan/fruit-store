@@ -5,6 +5,20 @@
 </div>
 
 <div class="group">
+ <%= f.input :publish_on, :as => :string %>
+
+</div>
+
+<div class="group">
+   <%= f.association :category,label:"种类" %>
+  <!-- <%#= f.select :category_id, Category.all.map{|x| [x.name, x.id]},{}, :class => "form-control" %> -->
+</div>
+
+<div class="group">
+  <%= f.association :groups %>
+</div>
+
+<div class="group">
   <%= f.input :description,label:"描述" %>
 </div>
 
@@ -40,3 +54,12 @@
 
 <%= f.submit "确定",data: {disable_with: "提交中..."},class:"btn btn-sm btn-primary" %>
 <% end %>
+
+<script>
+
+  $("#product_category_id").select2();
+  $("#product_group_ids").select2();
+  // $(".form-control.date.optional").datepicker();
+  $("#product_publish_on").datepicker({ format: "yyyy/mm/dd" });
+  autosize($("#product_description"));
+</script>

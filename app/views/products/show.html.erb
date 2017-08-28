@@ -10,9 +10,21 @@
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
-        <%= @product.description %>
+        <!-- <#%= @product.description.html_safe %> -->
+        <%= raw(@product.description) %>
       </p>
     </div>
+    <div>日期:<%=@product.publish_on %></div>
+
+    <% if @product.category.nil? %>
+    <div>种类:</div>
+    <% else %>
+    <div>种类:<%=@product.category.name%></div>
+    <% end %>
+    <div>标签: </div>
+    <%@product.groups.each do |g| %>
+      <%= g.name %>
+    <% end %>
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">

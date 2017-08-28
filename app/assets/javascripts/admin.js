@@ -17,4 +17,3 @@
 //= require select2
 //= require bootstrap-datepicker
 //= require autosize.min
-//= require blog

@@ -19,6 +19,15 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
 
+    set_page_title @product.title
+
+    page_description = view_context.truncate(@product.description, :length =>5)
+    set_page_description "#{page_description}"
+
+    set_page_keywords    "你好啊#{@product.price}"
+
+    set_page_image @product.image_url
+
   end
 
 

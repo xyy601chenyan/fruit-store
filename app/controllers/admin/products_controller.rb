@@ -24,6 +24,8 @@ class Admin::ProductsController < ApplicationController
   def show
     @product  = Product.find(params[:id])
 
+
+
   end
 
   def edit
@@ -55,6 +57,6 @@ class Admin::ProductsController < ApplicationController
   end
 
     def product_params
-      params.require(:product).permit(:title,:description,:quantity,:price,:image,{avatars: []})
+      params.require(:product).permit(:title,:description,:quantity,:price,:image,{avatars: []},:category_id,{group_ids: []},:publish_on)
     end
 end

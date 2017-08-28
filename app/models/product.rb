@@ -6,4 +6,9 @@ class Product < ApplicationRecord
   serialize :avatars, JSON
 
   has_many :cart_items
+
+  belongs_to :category
+
+  has_many :groupships
+has_many :groups, :through => :groupships
 end
