@@ -11,4 +11,9 @@ class CartsController < ApplicationController
    flash[:alert]="You have deleted cart"
    redirect_to :back
  end
+
+ def checkout
+  @order = Order.new
+ end
+
 end
