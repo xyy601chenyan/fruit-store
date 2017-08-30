@@ -30,6 +30,7 @@
               <ul class="dropdown-menu">
                 <li> <%= link_to(content_tag(:i,'admin panel', class:"fa fa-user-circle-o"),admin_products_path) %></li>
                 <li> <%= link_to(content_tag(:i,'登出',class: 'fa fa-sign-out'),destroy_user_session_path,method: :delete)%></li>
+                <li> <%= link_to(content_tag(:i,'我的订单',class: 'fa fa-file-text-o'),account_orders_path) %></li>
 
               </ul>
               </li>
