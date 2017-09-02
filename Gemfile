@@ -44,6 +44,7 @@ gem 'seo_helper'
 gem 'select2-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'aasm'
+gem 'figaro'
 gem 'letter_opener',group: :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
