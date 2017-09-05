@@ -94,5 +94,5 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: ENV["SEND_CLOUD_USER_NAME"],
     password: ENV["SEND_CLOUD_USER_KEY"]
-  }
+    }
 end
