@@ -1,0 +1,18 @@
+<h2>产品详情</h2>
+名称: <%= @product.title %>
+<br>
+描述: <%= @product.description%>
+<br>
+数量: <%= @product.quantity %>
+<br>
+价格: <%= @product.price %>
+<br>
+<% if !@product.image.file.nil? %>
+<span>商品图</span>
+<br>
+<%= image_tag(@product.image.thumb.url) %>
+<% end %>
+
+<% @product.avatars.each do |a| %>
+展示图: <%= image_tag(a.thumb.url) %>
+<% end %>
